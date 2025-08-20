@@ -16,6 +16,8 @@ RUN npm run build
 FROM nginx:1.27-alpine
 
 # Copy built static files to Nginx html dir
+# Clean default nginx html to avoid stale files
+RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /app/dist/ /usr/share/nginx/html/
 
 # Use custom nginx.conf to serve library files (no index.html) and enable directory listing

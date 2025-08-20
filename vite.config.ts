@@ -7,6 +7,7 @@ export default defineConfig({
     "process.env.NODE_ENV": JSON.stringify("production"),
   },
   build: {
+    emptyOutDir: true,
     lib: {
       entry: "src/index.tsx",
       name: "StoryJourneyWidget",
