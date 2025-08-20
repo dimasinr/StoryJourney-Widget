@@ -147,3 +147,5 @@ export function CharactersList({ apiKey, userId }: Props) {
     </div>
   );
 }
+
+export default CharactersList;
