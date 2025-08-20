@@ -1,8 +1,12 @@
+import CharactersList from './components/CharactersList';
+
 type AppProps = {
-  title?: string; // optional prop
+  sjKey?: string;
+  sjUser?: string;
 };
 
-export default function App({ title = "Halo dari Widget!" }: AppProps) {
+export default function App({ sjKey, sjUser }: AppProps) {
+  console.log(sjKey, sjUser);
   return (
     <div
       style={{
@@ -11,8 +15,13 @@ export default function App({ title = "Halo dari Widget!" }: AppProps) {
         borderRadius: "8px",
       }}
     >
-      <h2>{title}</h2>
-      <p>Ini React app yang dibungkus jadi Web Component 🎉</p>
+      {sjKey ? (
+        <CharactersList apiKey={sjKey} userId={sjUser ?? ''} />
+      ) : (
+        <div style={{ color: '#777', fontStyle: 'italic' }}>
+          Set <code>sjKey</code> untuk memuat data characters.
+        </div>
+      )}
     </div>
   );
 }
