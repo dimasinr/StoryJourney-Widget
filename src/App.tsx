@@ -1,4 +1,4 @@
-import {CreateScript} from './components/CreateScript';
+import CreateScript from "./components/CreateScript";
 
 type AppProps = {
   sjKey?: string;
@@ -6,7 +6,6 @@ type AppProps = {
 };
 
 export default function App({ sjKey, sjUser }: AppProps) {
-  console.log(sjKey, sjUser);
   return (
     <div
       style={{
