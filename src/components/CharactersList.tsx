@@ -7,7 +7,7 @@ type Props = {
   userId?: string;
 };
 
-export default function CharactersList({ apiKey, userId }: Props) {
+export function CharactersList({ apiKey, userId }: Props) {
   const [data, setData] = useState<CharactersResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

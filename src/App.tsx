@@ -1,4 +1,4 @@
-import CharactersList from './components/CharactersList';
+import {CreateScript} from './components/CreateScript';
 
 type AppProps = {
   sjKey?: string;
@@ -16,7 +16,7 @@ export default function App({ sjKey, sjUser }: AppProps) {
       }}
     >
       {sjKey ? (
-        <CharactersList apiKey={sjKey} userId={sjUser ?? ''} />
+        <CreateScript apiKey={sjKey} userId={sjUser ?? ''} />
       ) : (
         <div style={{ color: '#777', fontStyle: 'italic' }}>
           Set <code>sjKey</code> untuk memuat data characters.
